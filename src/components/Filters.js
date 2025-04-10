@@ -111,6 +111,24 @@ const Wrapper = styled.section`
     text-transform: capitalize;
   }
 
+  input[type='range'] {
+    -webkit-appearance: none;
+    background-color: white;
+    appearance: none;
+    border-radius: 15px;
+    height: 10px;
+    border: 1px solid var(--clr-grey-5);
+  }
+    
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    cursor: ew-resize;
+    background: var(--clr-grey-5);
+    border-radius: 50%;
+  }
+
   button {
     display: block;
     margin: 0.25em 0;
@@ -179,9 +197,9 @@ const Wrapper = styled.section`
     font-size: 1rem;
   }
   .clear-btn {
-    background: var(--clr-red-dark);
+    background: var(--clr-primary-5);
     color: var(--clr-white);
-    padding: 0.25rem 0.5rem;
+    padding: 0.6rem 0.75rem;
     border-radius: var(--radius);
   }
   @media (min-width: 768px) {
