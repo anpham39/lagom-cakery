@@ -3,23 +3,32 @@ import styled from "styled-components";
 const Footer = () => {
   return (
     <Wrapper>
-      <h5>
-        &copy; {new Date().getFullYear()}
-        <span> Lagom Cakery </span>
-      </h5>
-      <h5>All rights reserved</h5>
+      <div>
+        <h5>
+          &copy; {new Date().getFullYear()}
+          <span> Lagom Cakery </span>
+        </h5>
+        <h5>All rights reserved</h5>
+      </div>
+
+      <h5>This website is a portfolio project showcasing the products. The real bakery is active at IG: @lagom.cakery .</h5>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.footer`
-  height: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background: var(--clr-black);
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  align-items: center;
+  padding: 1.5rem;
+  div {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: center;
+  }
   span {
     color: var(--clr-primary-5);
   }

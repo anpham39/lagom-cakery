@@ -14,15 +14,17 @@ const AboutPage = () => {
             <h2>our story</h2>
             <div className="underline"></div>
           </div>
-          <p>
-            Lagom is an online bakery that makes cakes freshly upon orders. We
-            do not bake beforehand to make sure our customers get the freshest
-            treats, and we can personalize them to your liking. All you need to
-            do is send us a message, telling us what you like, and we will take
-            care of the rest! To us, every cake is made with as much care as if
-            they were made for our family. We sincerely believe that our passion
-            and love will be present in every bite you take.
-          </p>
+          <section class="intro">
+            <p>Welcome to <span class="bakery-name">Lagom Cakery</span> — Where Every Bite Feels Like Home 🍰✨</p>
+            <p>
+              We're a small-batch online bakery passionate about crafting unique, flavor-packed treats that blend classic comfort with creative twists.
+              From fluffy roll cakes to delicate pastries, each item is handmade with love, using quality ingredients and thoughtful flavor pairings.
+              Whether you're craving something cozy, bold, or just a little sweet, we’ve baked it just for you.
+            </p>
+            <p>
+              Treat yourself or surprise someone special — we deliver straight to your door! 💌
+            </p>
+          </section>
 
           <div className="social-media">
             <li>
@@ -69,6 +71,12 @@ const Wrapper = styled.section`
   .social-media {
     margin-top: 20px;
   }
+
+  .bakery-name {
+    color: #d77f5b;
+    font-weight: bold;
+  }
+
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;
   }
