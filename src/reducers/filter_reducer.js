@@ -58,7 +58,7 @@ const filter_reducer = (state, action) => {
     tempProducts = tempProducts.filter(
       (product) =>
         (!text || product.name.toLowerCase().includes(text.toLowerCase())) &&
-        (category === "all" || product.category === category) &&
+        (category === "all" || product.category.includes(category)) &&
         (flavour === "all" || product.flavour.includes(flavour)) &&
         product.price <= price
     );

@@ -16,5 +16,4 @@ export const navLinks = [
   },
 ];
 
-export const products_url =
-  "https://hoangann.com/teamit/wp-json/react-ecommerce/products";
+export const products_url ="https://brtrpywkuhhvqixbsigx.supabase.co/rest/v1/products";

@@ -12,7 +12,7 @@ const Filters = () => {
 
   const getUniqueValues = (data, type) => {
     let unique = data.map((item) => item[type]);
-    return ["all", ...new Set(unique)];
+    return ["all", ...new Set(unique.flat())];
   };
 
   const categories = getUniqueValues(allProducts, "category");
@@ -73,7 +73,7 @@ const Filters = () => {
 
           <div className="form-control">
             <h5>Price</h5>
-            <p className="price">{price / 100} €</p>
+            <p className="price">{price} €</p>
             <input
               type="range"
               name="price"

@@ -17,7 +17,6 @@ const ProductImages = ({ images = [] }) => {
             <img
               key={index}
               src={img}
-              alt={img.filename}
               className={`${img === mainImg ? "active" : null}`}
               onClick={() => setMainImg(images[index])}
             />
@@ -42,7 +41,7 @@ const Wrapper = styled.section`
     margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 1rem;
+    gap: 1rem;
     img {
       height: 150px;
       cursor: pointer;

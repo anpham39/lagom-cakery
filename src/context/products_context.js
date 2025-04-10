@@ -38,11 +38,15 @@ export const ProductsProvider = ({ children }) => {
   const fetchProducts = async (url) => {
     dispatch({ type: GET_PRODUCTS_BEGIN });
     try {
-      const response = await axios.get(url);
-      const data = response.data;
-      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: data });
+      const response = await fetch(url, {
+        headers: {
+          apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJydHJweXdrdWhodnFpeGJzaWd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM0MDg1OTIsImV4cCI6MjA1ODk4NDU5Mn0.eQMNH51q6GFLEiSH1x8DwoxRYtzMGyJz0ixaqRvBoOM",
+        },
+      });
+
+      const allProducts = await response.json();
+      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: allProducts });
     } catch (error) {
-      console.log("Error", error);
       dispatch({ type: GET_PRODUCTS_ERROR });
     }
   };
