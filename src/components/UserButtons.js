@@ -27,13 +27,19 @@ const UserButtons = () => {
           <FaUserPlus />
         </button>
       ) : (
-        <button
-          className="auth-btn"
-          onClick={() => logout({ returnTo: window.location.origin })}
-        >
-          Logout
-          <FaUserMinus />
-        </button>
+        <div className="auth-container">
+          <img className="avatar" src={myUser.avatar} alt="" />
+          <button
+            className="auth-btn"
+            onClick={() => logout({ returnTo: window.location.origin })}
+          >
+            {
+              myUser.name
+                ? `${myUser.name}`
+                : "Logout"
+            }
+          </button>
+        </div>
       )}
     </Wrapper>
   );
@@ -47,7 +53,7 @@ const Wrapper = styled.div`
 
   .cart-btn {
     color: var(--clr-grey-1);
-    font-size: 1.5rem;
+    font-size: 1rem;
     letter-spacing: var(--spacing);
     color: var(--clr-grey-1);
     display: flex;
@@ -83,12 +89,33 @@ const Wrapper = styled.div`
     align-items: center;
     background: transparent;
     border-color: transparent;
-    font-size: 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
     color: var(--clr-grey-1);
     letter-spacing: var(--spacing);
     svg {
       margin-left: 5px;
+    }
+  }
+  .auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    .cart-btn {
+      justify-content: center;
+    }
+    .auth-container {
+      display: block;
+      text-align: center;
     }
   }
 `;
