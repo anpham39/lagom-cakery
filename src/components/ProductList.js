@@ -13,19 +13,17 @@ const ProductList = () => {
         {filteredProducts.map((product) => {
           const { id, images, name, price, description } = product;
           return (
-            <Link to={`/products/${id}`}>
-              <article key={id}>
-                <img src={images[0]} alt="name" />
-                <div>
-                  <h4>{name}</h4>
-                  <h5 className="price">{price / 100}€</h5>
-                  <p>{description.substring(0, 120)}...</p>
-                  <Link to={`/products/${id}`} className="btn">
-                    Details
-                  </Link>
-                </div>
-              </article>
-            </Link>
+            <article key={id}>
+              <img src={images[0]} alt="name" />
+              <div>
+                <h4>{name}</h4>
+                <h5 className="price">{price} €</h5>
+                <p>{description.substring(0, 120)}...</p>
+                <Link to={`/products/${id}`} className="btn">
+                  Details
+                </Link>
+              </div>
+            </article>
           );
         })}
       </Wrapper>
@@ -59,8 +57,7 @@ const Wrapper = styled.section`
     margin-bottom: 1rem;
   }
   .btn {
-    font-size: 0.5rem;
-    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
   }
   @media (min-width: 992px) {
     article {

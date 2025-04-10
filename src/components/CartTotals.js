@@ -13,7 +13,7 @@ const CartTotals = () => {
       <div>
         <article>
           <h4>
-            Order total: <span>{totalPrice / 100} €</span>
+            Order total: <span>{totalPrice} €</span>
           </h4>
         </article>
 

@@ -19,11 +19,11 @@ const CartItem = ({ id, image, name, amount, price, max }) => {
         <img src={image} alt={name} />
         <div>
           <h5 className="name">{name}</h5>
-          <h5 className="price-small">{price / 100} €</h5>
+          <h5 className="price-small">{price} €</h5>
         </div>
       </div>
 
-      <h5 className="price">{price / 100} €</h5>
+      <h5 className="price">{price} €</h5>
 
       <div className="amount-btns">
         <button
@@ -41,7 +41,7 @@ const CartItem = ({ id, image, name, amount, price, max }) => {
         </button>
       </div>
 
-      <h5 className="subtotal">{(price * amount) / 100} €</h5>
+      <h5 className="subtotal">{price * amount} €</h5>
 
       <button className="remove-btn" onClick={() => removeItem(id)}>
         <FaTrash />
