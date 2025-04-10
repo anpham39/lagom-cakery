@@ -24,7 +24,7 @@ const SingleProductPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchSingleProduct(id);
+    fetchSingleProduct(Number(id));
   }, [id]);
 
   useEffect(() => {
@@ -85,7 +85,7 @@ const SingleProductPage = () => {
                 })}
                 <span> ({reviews} reviews)</span>
               </div>
-              <h5 className="price">{price / 100}€</h5>
+              <h5 className="price">{price} €</h5>
               <p className="desc">{description}</p>
               <p className="info">
                 <span>Available: </span>
@@ -97,7 +97,7 @@ const SingleProductPage = () => {
               </p>
               <p className="info">
                 <span>Main flavour: </span>
-                {flavour}
+                {flavour.join(', ')}
               </p>
               <hr />
               {stock > 0 && <AddToCart product={singleProduct} />}
