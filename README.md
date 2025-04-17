@@ -1,5 +1,5 @@
 ### Description
-An e-commerce demo web shop for Lagom Cakery, a online bakery in Helsinki, Finland. Fetching products from my own API.
+An e-commerce demo web shop for Lagom Cakery, a online bakery in Helsinki, Finland. Fetching products from Supabase.
 
 Checkout at: https://lagom-cakery.netlify.app
 
@@ -15,7 +15,6 @@ Checkout at: https://lagom-cakery.netlify.app
 
 ### Teck stack
 * React
-* Axios
 * styled-components
 * Auth0 authentication
 
